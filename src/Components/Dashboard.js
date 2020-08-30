@@ -2,6 +2,7 @@ import React from 'react'
 import { Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import Navbar from './Navbar';
 import ProductList from './ProductList';
+import SearchBar from './SearchBar';
 
 const SidebarExampleVisible = () => (
     <div>
@@ -33,6 +34,7 @@ const SidebarExampleVisible = () => (
     <Sidebar.Pusher>
       <Segment basic>
         <Header as='h3'>Products</Header>
+        <SearchBar/>
         <ProductList/>
       </Segment>
 

@@ -9,7 +9,7 @@ const ProductList = () => {
     const productContextData=useContext(ProductContext);
     console.log(productContextData);
 
-    const {products,onProductsStateChange}=productContextData;
+    const {products,onProductsStateChange,allProductsChange}=productContextData;
 
     useEffect(
         ()=>
@@ -17,8 +17,10 @@ const ProductList = () => {
             fetch("https://fakestoreapi.com/products")
             .then(data=>data.json())
             .then(data=>{
-                console.log(data)
-                onProductsStateChange(data)})
+                console.log(data);
+                onProductsStateChange(data);
+                allProductsChange(data);
+            })
         },[])
 
         console.log(productContextData)

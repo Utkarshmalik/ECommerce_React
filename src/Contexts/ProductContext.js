@@ -5,9 +5,10 @@ export const ProductContext=createContext();
 const ProductContextProvider = (props) => {
 
     const [productsState,onProductsStateChange]=useState([]) 
+    const [allProducts,allProductsChange]=useState([])
 
     return(
-        <ProductContext.Provider value={{products:productsState,onProductsStateChange}}>
+        <ProductContext.Provider value={{products:productsState,allProducts,onProductsStateChange,allProductsChange}}>
         {props.children}
         </ProductContext.Provider>
     )
